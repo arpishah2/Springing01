@@ -3,7 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-	<bean id="basicMessageOfDay" class="com.springing.Springing01.service.BasicMessageOfTheDayImpl" />
+	<bean id="basicMessageOfDay" class="com.springing.Springing01.service.BasicMessageOfTheDayImpl">
+		<property name="message" value="Hi How are you"></property>
+	</bean>
+	
+	
 	<bean id="printer" class="com.springing.Springing01.service.MessagePrinterService">
 		<property name="messageService" ref="basicMessageOfDay"></property>
 	</bean>
