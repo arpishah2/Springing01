@@ -8,6 +8,17 @@
 	</bean>
 	
 	<bean id="dynamicMessageOfDay" class="com.springing.Springing01.service.DynamicMessageOfTheDayImpl">
+		<constructor-arg>
+			<array>
+				<value>"Sunday Morning Message!</value>
+				<value>"Monday Morning Message!</value>
+				<value>"Tuesday Morning Message!</value>
+				<value>"Wednesday Morning Message!</value>
+				<value>"Thursday Morning Message!</value>
+				<value>"Friday Morning Message!</value>
+				<value>"Saturday Morning Message!</value>
+			</array>
+		</constructor-arg>
 		<property name="messagesArray">
 			<array>
 				<value>"Sunday Morning Message!</value>
@@ -73,7 +84,7 @@
 				<entry key="6" value-ref="6"/>
 				<entry key="7" value-ref="7"/>
 			</map>
-		</property> 
+		</property>   
 	</bean>
 	
 	<bean id="printer" class="com.springing.Springing01.service.MessagePrinterService">
