@@ -54,7 +54,7 @@ public class DynamicMessageOfTheDayImpl implements MessageOfTheDayService {
 			message = "From List: "+messagesList.get(day-1); 
 		}
 		if(!messagesValueList.isEmpty()) {
-			message = "From List: "+messagesList.get(day-1); 
+			message = "From List: "+messagesValueList.get(day-1).getMessage(); 
 		}
 		
 	

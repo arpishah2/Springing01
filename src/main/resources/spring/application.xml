@@ -8,7 +8,7 @@
 	</bean>
 	
 	<bean id="dynamicMessageOfDay" class="com.springing.Springing01.service.DynamicMessageOfTheDayImpl">
-		<property name="messagesArray">
+		<!--  <property name="messagesArray">
 			<array>
 				<value>"Sunday Morning Message!</value>
 				<value>"Monday Morning Message!</value>
@@ -29,6 +29,28 @@
 				<ref bean="6"/>
 				<ref bean="7"/>
 			</array>
+		</property>
+		<property name="messagesList">
+			<list>
+				<value>"Sunday Morning Message!</value>
+				<value>"Monday Morning Message!</value>
+				<value>"Tuesday Morning Message!</value>
+				<value>"Wednesday Morning Message!</value>
+				<value>"Thursday Morning Message!</value>
+				<value>"Friday Morning Message!</value>
+				<value>"Saturday Morning Message!</value>
+			</list>
+		</property> -->
+		<property name="messagesValueList">
+			<list>
+				<ref bean="1"/>
+				<ref bean="2"/>
+				<ref bean="3"/>
+				<ref bean="4"/>
+				<ref bean="5"/>
+				<ref bean="6"/>
+				<ref bean="7"/>
+			</list>
 		</property>
 	</bean>
 	
