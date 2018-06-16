@@ -8,7 +8,7 @@
 	</bean>
 	
 	<bean id="dynamicMessageOfDay" class="com.springing.Springing01.service.DynamicMessageOfTheDayImpl">
-		<!--  <property name="messagesArray">
+		<property name="messagesArray">
 			<array>
 				<value>"Sunday Morning Message!</value>
 				<value>"Monday Morning Message!</value>
@@ -40,7 +40,7 @@
 				<value>"Friday Morning Message!</value>
 				<value>"Saturday Morning Message!</value>
 			</list>
-		</property> -->
+		</property> 
 		<property name="messagesValueList">
 			<list>
 				<ref bean="1"/>
@@ -52,6 +52,28 @@
 				<ref bean="7"/>
 			</list>
 		</property>
+		<property name="messagesMap">
+			<map>
+				<entry key="1" value="Sunday Morning Message!"/>
+				<entry key="2" value="Monday Morning Message!"/>
+				<entry key="3" value="Tuesday Morning Message!"/>
+				<entry key="4" value="Wednesday Morning Message!"/>
+				<entry key="5" value="Thursday Morning Message!"/>
+				<entry key="6" value="Friday Morning Message!"/>
+				<entry key="7" value="Saturday Morning Message!"/>
+			</map>
+		</property> 
+		<property name="messagesValueMap">
+			<map>
+				<entry key="1" value-ref="1"/>
+				<entry key="2" value-ref="2"/>
+				<entry key="3" value-ref="3"/>
+				<entry key="4" value-ref="4"/>
+				<entry key="5" value-ref="5"/>
+				<entry key="6" value-ref="6"/>
+				<entry key="7" value-ref="7"/>
+			</map>
+		</property> 
 	</bean>
 	
 	<bean id="printer" class="com.springing.Springing01.service.MessagePrinterService">

@@ -63,7 +63,7 @@ public class DynamicMessageOfTheDayImpl implements MessageOfTheDayService {
 			message = "From Map: "+messagesMap.get(day);
 		}
 		if(!messagesValueMap.isEmpty()) {
-			message = "From Map: "+messagesValueMap.get(day); 
+			message = "From Map: "+messagesValueMap.get(day).getMessage(); 
 		}
 		return message;
 	}
