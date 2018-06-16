@@ -4,12 +4,27 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
 	<bean id="basicMessageOfDay" class="com.springing.Springing01.service.BasicMessageOfTheDayImpl">
-		<property name="message" value="Hi How are you"></property>
+		<property name="message" value="Hello from Arpi"></property>
 	</bean>
 	
+	<bean id="dynamicMessageOfDay" class="com.springing.Springing01.service.DynamicMessageOfTheDayImpl">
+		<property name="messagesArray">
+			<array>
+				<value>"Sunday Morning Message!</value>
+				<value>"Monday Morning Message!</value>
+				<value>"Tuesday Morning Message!</value>
+				<value>"Wednesday Morning Message!</value>
+				<value>"Thursday Morning Message!</value>
+				<value>"Friday Morning Message!</value>
+				<value>"Saturday Morning Message!</value>
+			</array>
+		</property>
+	</bean>
 	
 	<bean id="printer" class="com.springing.Springing01.service.MessagePrinterService">
-		<constructor-arg ref="basicMessageOfDay"/>
+		<constructor-arg index="0" value="My Printer Service"/>
+		<constructor-arg index="1" value=">>"/>
+		<constructor-arg index="2" ref="dynamicMessageOfDay"/>
 	</bean>
 
 
