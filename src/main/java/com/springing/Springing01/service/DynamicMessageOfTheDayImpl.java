@@ -80,6 +80,10 @@ public class DynamicMessageOfTheDayImpl implements MessageOfTheDayService {
 	public MessageValue[] getMessagesValueArray() {
 		return messagesValueArray;
 	}
+	
+	public void setMessagesValueArray(MessageValue[] messagesValueArray) {
+		this.messagesValueArray = messagesValueArray;
+	}
 
 	public List<String> getMessagesList() {
 		return messagesList;

@@ -19,6 +19,17 @@
 				<value>"Saturday Morning Message!</value>
 			</array>
 		</property>
+		<property name="messagesValueArray">
+			<array>
+				<ref bean="1"/>
+				<ref bean="2"/>
+				<ref bean="3"/>
+				<ref bean="4"/>
+				<ref bean="5"/>
+				<ref bean="6"/>
+				<ref bean="7"/>
+			</array>
+		</property>
 	</bean>
 	
 	<bean id="printer" class="com.springing.Springing01.service.MessagePrinterService">
@@ -26,6 +37,29 @@
 		<constructor-arg index="1" value=">>"/>
 		<constructor-arg index="2" ref="dynamicMessageOfDay"/>
 	</bean>
-
-
+	
+	<!-- Messages value object -->
+	<bean id="1" class="com.springing.Springing01.model.MessageValue">
+		<constructor-arg value = "Sunday Morning Message"></constructor-arg>
+	</bean>
+	<bean id="2" class="com.springing.Springing01.model.MessageValue">
+		<constructor-arg value = "Monday Morning Message"></constructor-arg>
+	</bean>
+	<bean id="3" class="com.springing.Springing01.model.MessageValue">
+		<constructor-arg value = "Tuesday Morning Message"></constructor-arg>
+	</bean>
+	<bean id="4" class="com.springing.Springing01.model.MessageValue">
+		<constructor-arg value = "Wednesday Morning Message"></constructor-arg>
+	</bean>
+	<bean id="5" class="com.springing.Springing01.model.MessageValue">
+		<constructor-arg value = "Thursday Morning Message"></constructor-arg>
+	</bean>
+	<bean id="6" class="com.springing.Springing01.model.MessageValue">
+		<constructor-arg value = "Friday Morning Message"></constructor-arg>
+	</bean>
+	<bean id="7" class="com.springing.Springing01.model.MessageValue">
+		<constructor-arg value = "Saturday Morning Message"></constructor-arg>
+	</bean>
+	
+	
 </beans>
