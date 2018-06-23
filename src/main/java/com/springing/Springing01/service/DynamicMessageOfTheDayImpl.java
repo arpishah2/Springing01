@@ -7,9 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 import com.springing.Springing01.model.MessageValue;
 
-public class DynamicMessageOfTheDayImpl implements MessageOfTheDayService {
+public class DynamicMessageOfTheDayImpl implements MessageOfTheDayService, InitializingBean, DisposableBean {
 
 	
 	//Messages held in array
@@ -26,12 +29,20 @@ public class DynamicMessageOfTheDayImpl implements MessageOfTheDayService {
 	
 	
 	//constructors
-	public DynamicMessageOfTheDayImpl() {}
+	public DynamicMessageOfTheDayImpl() {
+		System.out.println("DynamicMessageOfTheDayImpl: default constructor called ");
+	}
 	
 	public DynamicMessageOfTheDayImpl(String[] messages) {
+		System.out.println("DynamicMessageOfTheDayImpl: args-constructor called ");
 		this.messagesArray = (String[])messages.clone();
 	}
 
+    public void init() {
+    	System.out.println("DynamicMessageOfTheDayImpl: Init Called");
+    }
+    
+    
 	//method
 	public String getMessage(){
 		
@@ -117,5 +128,16 @@ public class DynamicMessageOfTheDayImpl implements MessageOfTheDayService {
 		this.messagesValueMap = messagesValueMap;
 	}
 
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("DynamicMessageOfTheDayImpl: Destroy Called");
+		
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("DynamicMessageOfTheDayImpl: afterProperties Called");
+		
+	}
 	
 }
